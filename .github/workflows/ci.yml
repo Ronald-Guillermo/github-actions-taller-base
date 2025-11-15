@@ -5,7 +5,7 @@ on:
 jobs:
   build_and_test: 
     runs-on: ubuntu-latest
-    strategy: # ¡NUEVO BLOQUE!
+    strategy:
       matrix:
         node-version: ['18', '20']
     steps:
@@ -19,5 +19,14 @@ jobs:
       run: npm ci
     - name: 4 probar el codigo  
       run: npm test
-
+  deploy:
+    needs: [build_and_test]
+    runs-on:
+      ubuntu-latest
+    steps:
+      - name: 1. Descargar el codigo
+        uses: actions/checkout@v4
+      - name: 2. despliegue
+        run: echo "despliegue exitoso"
+      
   
