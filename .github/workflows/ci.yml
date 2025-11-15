@@ -5,6 +5,9 @@ on:
 jobs:
   build_and_test: 
     runs-on: ubuntu-latest
+    strategy: # ¡NUEVO BLOQUE!
+      matrix:
+        node-version: ['18', '20']
     steps:
     - name: 1 obtener codigo
       uses: actions/checkout@v4
