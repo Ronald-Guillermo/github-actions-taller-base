@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 1 obtener codigo
-      uses: action-checkout@v4
+      uses: actions/checkout@v4
     - name: 2 configurar node.js(20)
       uses: actions/setup-node@v4
       with: 
