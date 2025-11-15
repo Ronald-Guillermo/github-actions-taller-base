@@ -1,0 +1,4 @@
+name: Integracion Continua (CI)
+on: 
+  push:
+    branches: [main]
