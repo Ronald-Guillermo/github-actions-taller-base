@@ -3,11 +3,12 @@ on:
   push:
     branches: [main]
 jobs:
-  build_and_test: 
-    runs-on: ubuntu-latest
+  build_and_test:
     strategy:
       matrix:
         node-version: ['18', '20']
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }} #se agrega los 2 sistemas operativos
     steps:
     - name: 1 obtener codigo
       uses: actions/checkout@v4
